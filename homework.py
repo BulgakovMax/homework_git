@@ -20,7 +20,6 @@ def is_two_object_has_same_value(first: Any, second: Any) -> bool:
     return first == second
 
 
-
 def is_two_objects_has_same_type(first: Any, second: Any) -> bool:
     """
     If @first and @second has same type should return True
@@ -30,7 +29,6 @@ def is_two_objects_has_same_type(first: Any, second: Any) -> bool:
     return type(first) == type(second)
 
 
-
 def is_two_objects_is_the_same_objects(first: Any, second: Any) -> bool:
     """
     If @first and @second has same type should return True
@@ -38,7 +36,6 @@ def is_two_objects_is_the_same_objects(first: Any, second: Any) -> bool:
     """
     pass
     return  first is second
-
 
 
 def multiple_ints(first_value: int, second_value: int) -> int:
@@ -56,11 +53,11 @@ def multiple_ints(first_value: int, second_value: int) -> int:
         Product of elements
     """
     pass
-    try:
-        if (isinstance(first_value, int) and isinstance(second_value, int)) == True:
-            return first_value + second_value
-    except ValueError:
-        print("invalid literal should  enter integer")
+    if (isinstance(first_value, int) and isinstance(second_value, int)) == True:
+        return first_value * second_value
+    else:
+        raise ValueError
+
 
 def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
     """
@@ -91,12 +88,9 @@ def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
     """
     pass
     try:
-        x = int(first_value)
-        y = int(second_value)
-        if (isinstance(x, int) and isinstance(y, int)) == True:
-            return x + y
+        return int(first_value) * int(second_value)
     except ValueError:
-        print("Not valid input data")
+        raise ValueError("Not valid input data")
 
 
 def is_word_in_text(word: str, text: str) -> bool:
@@ -113,7 +107,6 @@ def is_word_in_text(word: str, text: str) -> bool:
         >>> True
         is_word_in_text("Glad", "Nice to meet you ")
         >>> False
-
     """
     pass
     return word in text
@@ -139,7 +132,6 @@ def remove_from_list_all_negative_numbers(data: List[int]) -> list:
     return [i for i in data if i >= 0]
 
 
-
 def alphabet() -> dict:
     """
     Create dict which keys is alphabetic characters. And values their number in alphabet
@@ -156,6 +148,7 @@ def alphabet() -> dict:
         i = i + 1
     return d
 
+
 def simple_sort(data: List[int]) -> List[list]:
     """
     Sort list of ints without using built-in methods.
@@ -163,7 +156,6 @@ def simple_sort(data: List[int]) -> List[list]:
         simple_sort([2, 9, 6, 7, 3, 2, 1])
         >>> [1, 2, 2, 3, 6, 7, 9]
     Returns:
-
     """
     pass
     n = len(data)
